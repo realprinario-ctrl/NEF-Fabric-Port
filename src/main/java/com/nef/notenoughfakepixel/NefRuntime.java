@@ -3,6 +3,7 @@ package com.nef.notenoughfakepixel;
 import com.nef.notenoughfakepixel.feature.FeatureRegistry;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.text.Text;
+import com.nef.notenoughfakepixel.screen.NefScreenAssistant;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,6 +24,8 @@ public final class NefRuntime {
         if (client.player == null) return;
 
         try {
+            NefScreenAssistant.tick(client);
+
             if (FeatureRegistry.isEnabled("qol.always_sprint")
                     && client.player.input.hasForwardMovement()
                     && !client.player.isSneaking()) {
