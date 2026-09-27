@@ -9,6 +9,8 @@ public final class FeatureDefaults {
             {"qol.chat_disable_friend_join", "Disable Friend Join Messages", "Quality of Life"},
             {"qol.chat_disable_info_watchdog", "Disable Info/Watchdog Messages", "Quality of Life"},
             {"qol.chat_disable_selling_ranks", "Disable Selling Rank Messages", "Quality of Life"},
+            {"qol.chat_disable_game_invites", "Disable Game Invites", "Quality of Life"},
+            {"qol.chat_disable_server_announcements", "Disable Server Announcements", "Quality of Life"},
             {"qol.copy_chat_message", "Copy Chat Message", "Quality of Life"},
             {"qol.disable_block_break_particles", "Disable Block Breaking Particles", "Quality of Life"},
             {"qol.hide_flaming_fists", "Hide Flaming Fists", "Quality of Life"},
