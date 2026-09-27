@@ -6,11 +6,12 @@ import net.minecraft.text.Text;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Locale;
 
 public final class NefRuntime {
     private static final List<String> RECENT_ALERTS = new ArrayList<>();
     private static long lastTick;
+    private static double savedGamma = 1.0;
+    private static boolean savedGammaState;
 
     private NefRuntime() {}
 
@@ -28,8 +29,17 @@ public final class NefRuntime {
                 client.player.setSprinting(true);
             }
 
-            if (FeatureRegistry.isEnabled("qol.fullbright")) {
+            boolean fullbright = FeatureRegistry.isEnabled("qol.fullbright");
+            if (fullbright && !savedGammaState) {
+                savedGamma = client.options.getGamma().getValue();
+                savedGammaState = true;
+            }
+
+            if (fullbright) {
                 client.options.getGamma().setValue(16.0);
+            } else if (savedGammaState) {
+                client.options.getGamma().setValue(savedGamma);
+                savedGammaState = false;
             }
         } catch (Throwable ignored) {
             // A feature must never bring down the client.
@@ -47,10 +57,5 @@ public final class NefRuntime {
 
     public static List<String> recentAlerts() {
         return List.copyOf(RECENT_ALERTS);
-    }
-
-    public static String describe(String id) {
-        String normalized = id.toLowerCase(Locale.ROOT);
-        return normalized + ": " + FeatureRegistry.isEnabled(normalized);
     }
 }
