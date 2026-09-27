@@ -78,7 +78,7 @@ public final class NefClientCommands {
                                     );
                                     ctx.getSource().sendFeedback(Text.literal("§b[NEF] §aWaypoint saved."));
                                     return 1;
-                                })))))
+                                }))))))
 
             waypoint.then(ClientCommandManager.literal("remove")
                 .then(ClientCommandManager.argument("name", StringArgumentType.string())
