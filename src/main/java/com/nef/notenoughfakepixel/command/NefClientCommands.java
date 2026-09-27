@@ -133,7 +133,7 @@ public final class NefClientCommands {
                 ctx.getSource().sendFeedback(Text.literal(
                     "§b[NEF] §f/nef toggle <feature> §7| §f/nef set <feature> <true|false> §7| §f/nef list"));
                 ctx.getSource().sendFeedback(Text.literal(
-                    "§b[NEF] §f/nef waypoint add "name" <x> <y> <z> §7| §f/nef waypoint remove "name""));
+                    "§b[NEF] §f/nef waypoint add <name> <x> <y> <z> §7| §f/nef waypoint remove <name>"));
                 return 1;
             });
 
