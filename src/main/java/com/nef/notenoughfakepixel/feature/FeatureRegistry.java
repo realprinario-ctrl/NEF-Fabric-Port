@@ -20,6 +20,7 @@ public final class FeatureRegistry {
 
     public static void load() {
         DEFINITIONS.clear();
+        FeatureDefaults.register();
         register("qol.always_sprint", "Always Sprint", "Quality of Life", true);
         register("qol.fullbright", "Fullbright", "Quality of Life", false);
         register("qol.no_hurt_camera", "No Hurt Camera", "Quality of Life", true);
